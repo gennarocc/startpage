@@ -3,49 +3,46 @@
     { "name": "media",
       "color": "red",
       "links": [
-        { "name": "Spotify", "url": "https://open.spotify.com/" },
-        { "name": "YoutubeMusic", "url": "https://music.youtube.com/" },
-        { "name": "Netflix", "url": "https://netflix.com" },
-        { "name": "Youtube", "url": "https://youtube.com" }
+        { "name": "plex", "url": "https://app.plex.tv/desktop" },
+        { "name": "netflix", "url": "https://netflix.com" },
+        { "name": "youtube", "url": "https://youtube.com" }
       ]
     },
     { "name": "work",
       "color": "#26A69A",
       "links": [
-        { "name": "Github", "url": "https://github.com" },
-        { "name": "Heroku", "url": "http://heroku.com/" },
-        { "name": "localhost", "url": "http://localhost:8000/" }
+        {"name": "gmail", "url": "http://gmail.com/"},
+	{"name": "gdrive", "url": "https://drive.google.com/drive/u/0/my-drive/"},
+	{"name": "workspace", "url": "https://drive.google.com/drive/u/0/folders/0BxfD5z7QQ1Imc0k0M3VpNjFTN00"},
+	{"name": "github", "url": "https://github.com/"}
       ]
     },
     { "name": "social",
       "links": [
-        { "name": "Reddit", "url": "https://reddit.com" },
-        { "name": "Unixporn Love", "url": "https://deepjyoti30.github.io/unixporn-love/" },
-        { "name": "r/unixporn", "url": "https://www.reddit.com/r/unixporn/" },
-        { "name": "r/mk", "url": "https://www.reddit.com/r/MechanicalKeyboards/" }
+        { "name": "reddit", "url": "https://reddit.com" },
+        { "name": "instagram", "url": "https://www.instagram.com/" },
+        { "name": "facebook", "url": "https://www.facebook.com/" }
       ]
     },
     {
-      "name": "Others",
+      "name": "others",
       "links": [
-        {"name": "Material Colors", "url": "http://materialuicolors.co/"},
-        {"name": "Gmail", "url": "http://gmail.com/"},
-        {"name": "neo4j Local", "url": "http://localhost:7474/"},
-        {"name": "rarbg", "url": "http://rarbg.to"}
+        {"name": "arch wiki", "url": "https://wiki.archlinux.org/"}
+
       ]
     }
   ],
   "searchEngine":"DuckDuckGo",
-  "user": "Deepjyoti",
+  "user": "Gennaro",
   "disableMessage": false,
   "disableDate": false,
   "disableSearchBar": false,
   "disable24Hour": false,
-  "disableWeather": true,
-  "timeZone": "America/Los_Angeles",
+  "disableWeather": false,
+  "timeZone": "America/New_York",
   "weatherConf": {
-    "location": "Pune India",
-    "unit": "cel"
+    "location": "Raleigh,US",
+    "unit": "fah"
   },
   "settingsIcon": false
 }

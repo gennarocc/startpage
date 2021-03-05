@@ -4,10 +4,10 @@
   "short_name": "minimal-startpage",
   "version": "0.2",
   "description": "Overrides the browsers newtab page with a custom startpage.",
-  "author": "deepjyoti30",
+  "author": "gennarocc",
 
   "icons": {
-    "64": "img/icon64.png"
+    "32": "img/favicon.svg"
   },
   "chrome_url_overrides": {
     "newtab": "index.html"

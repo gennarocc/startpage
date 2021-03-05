@@ -12,12 +12,12 @@ dateDivId = "date"
 dateId = "date-text"
 weatherId = "weather-text"
 lineId = "line"
-messageId = "message-text"
+
 timeZ = undefined
 otherContentId = "other-content"
 userName = ""
 disable24Hour = false;
-appId = "fd2c04ed7f9802656bd2cc23bddc7ad9"
+appId = "2a6b43f236531d6c90410436dd528cff"
 apiUrl = "http://api.openweathermap.org/data/2.5/weather"
 bgClassContainer = [
     "media",
@@ -71,7 +71,7 @@ function initSearchBar(jsonData) {
         searchEngine = "Google"
     }
     searchUrl = this.searchEngines[searchEngine]
-    document.getElementById(searchBarId).placeholder = `Search something on ${searchEngine}`
+    document.getElementById(searchBarId).placeholder = `search...`
     document.getElementById(searchBarId).addEventListener("keypress", (event) => {
         if (event.key != 'Enter') return
 
@@ -170,22 +170,19 @@ function updateWeather(weatherConfig) {
      * the config and update it in a formatted way according to
      * the unit.
      */
-    userLocation = weatherConfig["location"].replace(/\ /g, ",")
+
     passedUnit = weatherConfig["unit"]
     unit = validWeatherUnit.includes(passedUnit.substring(0, 3)) ?
-            passedUnit : "cel"
+            passedUnit : "feh"
 
-    fetchUrl = apiUrl + `?q=${userLocation}&appid=${appId}&units=metric`
+    fetchUrl = apiUrl + `?id=4487042&appid=${appId}&units=imperial`
 
     fetch(fetchUrl)
         .then(response => {return response.json()})
         .then(jsonData => {
             temp = Math.floor(jsonData["main"]["temp"])
             weatherType = jsonData["weather"][0]["main"]
-
-            temp = !unit.includes("cel") ?
-                        getFahrenheit(temp) + "&deg;F" : temp + "&deg;C"
-            weatherText = temp + ", " + indexUppercase(weatherType)
+            weatherText = temp + "&deg;F, " + indexUppercase(weatherType)
             document.getElementById(weatherId).innerHTML = weatherText
         })
 }
@@ -210,20 +207,7 @@ function parseAndCreate(jsonData) {
     /**
      * Parse the passed jsonData and create div's accordingly.
      */
-    this.userName = jsonData["user"]
-
-    // Enable the settings button if it is enabled
-    if (jsonData["settingsIcon"]) enableCog();
-
-    // If the user has not passed any custom message
-    if (Object.keys(jsonData).includes("message") && 
-            typeof(jsonData["message"]) == "string" &&
-            jsonData["message"] != "")
-        builtMsg = jsonData["message"]
-    else
-        builtMsg = this.handleMessage(this.userName);
     
-    document.getElementById(messageId).textContent = builtMsg
     // Check if 24 hour is disabled
     disable24Hour = jsonData["disable24Hour"]
     timeZ = jsonData["timeZone"]
